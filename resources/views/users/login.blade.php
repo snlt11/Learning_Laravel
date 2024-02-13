@@ -6,6 +6,12 @@
     <div class="col-md-6 offset-md-3 my-5">
         <h1 class="text-info text-center">Login User</h1>
         <form method="post">
+            @if(Session::get('success'))
+                <div class="alert alert-success alert-dismissible fade show" role="alert">
+                    <strong>{{Session::get('success')}}</strong>
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                </div>
+            @endif
             @csrf
             <div class="mb-3">
                 <label for="phone" class="form-label">Enter Your Phone Number</label>

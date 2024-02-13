@@ -30,7 +30,7 @@
                 <ul class="dropdown-menu">
 
                     @auth
-                        <li><a class="dropdown-item" href="#">Logout</a></li>
+                        <li><a class="dropdown-item" href="/user/logout">Logout</a></li>
                     @endauth
 
                     @guest
