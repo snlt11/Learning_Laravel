@@ -6,16 +6,6 @@
     <div class="col-md-6 offset-md-3 my-5">
         <h1 class="text-info text-center">Register User</h1>
         <form method="post">
-            {{-- @if ($errors->any)
-                @foreach ($errors->all() as $error)
-                    <div class="alert alert-warning alert-dismissible fade show" role="alert">
-                        <strong>{{$error}}</strong>
-                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-                    </div>
-                @endforeach
-            @else
-                <h2>No Error</h2>
-            @endif --}}
 
             @csrf
             <div class="mb-3">
