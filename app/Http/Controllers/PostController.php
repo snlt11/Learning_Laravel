@@ -22,7 +22,12 @@ class PostController extends Controller
 
     public function store(Request $request)
     {
-        //
+        $posts = Post::create([
+            'title' => $request->title,
+            'content' => $request->content,
+            'likes' => $request->likes
+        ]);
+        return redirect()->route('posts.index');
     }
 
     /**
@@ -30,7 +35,7 @@ class PostController extends Controller
      */
     public function show(Post $post)
     {
-        //
+        return view('posts.show',compact('post'));
     }
 
     /**
@@ -38,7 +43,7 @@ class PostController extends Controller
      */
     public function edit(Post $post)
     {
-        //
+        return view('posts.edit', compact('post'));
     }
 
     /**
@@ -46,7 +51,12 @@ class PostController extends Controller
      */
     public function update(Request $request, Post $post)
     {
-        //
+        $post->title = $request->title;
+        $post->content = $request->content;
+        $post->likes = $request->likes;
+
+        $post->update();
+        return redirect()->route('posts.index');
     }
 
     /**
@@ -54,6 +64,7 @@ class PostController extends Controller
      */
     public function destroy(Post $post)
     {
-        //
+        $post->delete();
+        return redirect()->route('posts.index');
     }
 }

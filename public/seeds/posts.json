@@ -1,0 +1,27 @@
+[
+    {
+        "title": "Post one",
+        "content": "Content one",
+        "likes": "1"
+    },
+    {
+        "title": "Post two",
+        "content": "Content two",
+        "likes": "2"
+    },
+    {
+        "title": "Post three",
+        "content": "Content three",
+        "likes": "3"
+    },
+    {
+        "title": "Post four",
+        "content": "Content four",
+        "likes": "4"
+    },
+    {
+        "title": "Post five",
+        "content": "Content five",
+        "likes": "5"
+    }
+]
