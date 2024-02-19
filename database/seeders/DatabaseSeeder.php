@@ -21,11 +21,6 @@ class DatabaseSeeder extends Seeder
         //     'email' => 'test@example.com',
         // ]);
 
-        Tag::factory()->count(5)->create();
 
-        $this->callOnce([
-            PostSeeder::class,
-            CategorySeeder::class
-        ]);
     }
 }

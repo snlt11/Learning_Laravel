@@ -3,27 +3,41 @@
 @section('title','Welcome to blade')
 
 @section('content')
-    <h1>{{$title}}</h1>
-    <button class="btn btn-primary" onclick="show()">Click</button><br><br>
-
-    <a href="/tags" class="btn btn-primary">To Tags</a>
-    <a href="/categories" class="btn btn-info">To Category</a>
+    <h1>Welcome Page</h1>
 
 
-    {{-- @php
-        $con = "success";
+    <a href="{{URL::temporarySignedRoute('verify',now()->addSeconds(3),['uid'=>2])}}">Verify</a>
+
+    <a href="/posts">Default</a>
+    <a href="{{url('posts')}}">URL</a>
+    <a href="{{route('posts')}}">Route</a>
+
+    @php
+        $pid = 1;
+        $name = 'mgmg';
     @endphp
-    <x-helper.tester sender="testcall" :title="$title" :con="$con" data="this is data" class="alert-info">
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut, blanditiis. Consequuntur delectus, odio earum rem odit qui doloribus ratione itaque omnis architecto saepe nesciunt harum dolor enim cum laudantium similique.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reprehenderit, nam libero maiores ab, veritatis quibusdam maxime esse error minima quod inventore. Totam perspiciatis aut porro, laboriosam voluptatibus modi explicabo fugit.</p>
-    </x-helper.tester> --}}
 
-    {{-- <x-drink.water/> --}}
-    {{-- <x-drink.show-it/> --}}
-    {{-- <x-water/> --}}
-    {{-- <x-showit/> --}}
+    <h1>Single Post</h1>
+    <a href="/post/$pid">single post</a>
+    <a href="{{url('/post/'.$pid)}}">PID post</a>
+    <a href="{{route('single.post',$pid)}}">Name route</a>
+
+    <h1>nested Post</h1>
+    <a href="/post/$pid/edit">nested post</a>
+    <a href="{{url('/post/'.$pid.'/edit')}}">nested post</a>
+    <a href="{{route('post.edit',$pid)}}">nested name route</a>
+
+
+    <h1>Double path Post</h1>
+    <a href="/post/1/mgmg/edit">Double path post</a>
+    <a href="{{url('/post/'.$pid.'/'.$name.'/edit')}}">Double path URL post</a>
+    <a href="{{route('post.edit2',[$pid,$name,'test1','test2'])}}">Double path Name route</a>
+
+    <h1>Double nested Post</h1>
+    <a href="/post/1/edit/mgmg">Double nested post</a>
+    <a href="{{url('/post/'.$pid.'/edit/'.$name)}}">Double nested URL post</a>
+    <a href="{{route('post.edit3',[$pid,$name,'test1','test2'])}}">Double nested Name route</a>
+
 @endsection
 
-@section('scripts')
-    let show = () => alert('123');
-@endsection
 
