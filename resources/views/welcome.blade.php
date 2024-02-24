@@ -5,7 +5,15 @@
 @section('content')
     <h1>Welcome Page</h1>
 
+{{--
 
+    <a href="{{route('post.all')}}">All post</a><br>
+    <a href="{{route('post.single',[1])}}">Single post</a><br>
+    <a href="{{route('post.edit',[1])}}">Edit post id</a><br>
+    <a href="{{route('post.edit2',[1,'mgmg'])}}">Edit post name id </a><br>
+    <a href="{{route('post.edit3',[1,'mgmg'])}}">Edit post name id  2</a><br>
+
+    <a href="{{route('home')}}">To Home</a><br><br>
     <a href="{{URL::temporarySignedRoute('verify',now()->addSeconds(3),['uid'=>2])}}">Verify</a>
 
     <a href="/posts">Default</a>
@@ -27,7 +35,6 @@
     <a href="{{url('/post/'.$pid.'/edit')}}">nested post</a>
     <a href="{{route('post.edit',$pid)}}">nested name route</a>
 
-
     <h1>Double path Post</h1>
     <a href="/post/1/mgmg/edit">Double path post</a>
     <a href="{{url('/post/'.$pid.'/'.$name.'/edit')}}">Double path URL post</a>
@@ -37,6 +44,8 @@
     <a href="/post/1/edit/mgmg">Double nested post</a>
     <a href="{{url('/post/'.$pid.'/edit/'.$name)}}">Double nested URL post</a>
     <a href="{{route('post.edit3',[$pid,$name,'test1','test2'])}}">Double nested Name route</a>
+
+--}}
 
 @endsection
 
