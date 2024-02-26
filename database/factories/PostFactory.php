@@ -9,15 +9,14 @@ use Illuminate\Database\Eloquent\Factories\Factory;
  */
 class PostFactory extends Factory
 {
-    /**
-     * Define the model's default state.
-     *
-     * @return array<string, mixed>
-     */
     public function definition(): array
     {
         return [
-            //
+            'name'=>$this->faker->name,
+            'description'=>$this->faker->text,
+            'longText'=>$this->faker->paragraph,
+            'price'=>$this->faker->rand(100,2000),
+            'status'=>$this->faker->boolean
         ];
     }
 }
