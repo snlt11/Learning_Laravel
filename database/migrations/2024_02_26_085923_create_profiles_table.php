@@ -11,8 +11,13 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::table('posts', function (Blueprint $table) {
-            $table->renameColumn('name', 'title');
+        Schema::create('profiles', function (Blueprint $table) {
+            $table->id();
+            $table->foreignId('user_id')->constrained()->onDelete('CASCADE');
+            $table->string('address');
+            $table->string('avatar');
+            $table->boolean('is_active');
+            $table->timestamps();
         });
     }
 
@@ -21,8 +26,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::table('posts', function (Blueprint $table) {
-            $table->renameColumn('title', 'name');
-        });
+        Schema::dropIfExists('profiles');
     }
 };

@@ -5,9 +5,12 @@
 @section('content')
 
     <h1>Welcome Page</h1>
-    @foreach ($posts as $post)
-        <p>{{$post->name}}</p>
+
+    @foreach ($users as $user)
+        <p>{{$user->profile->address}}</p>
+
     @endforeach
+
 
 @endsection
 
