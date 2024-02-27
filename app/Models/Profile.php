@@ -12,4 +12,7 @@ class Profile extends Model
     {
         return $this->belongsTo(User::class);
     }
+    protected $fillable = [
+        'address', 'user_id', 'avatar','is_active'
+    ];
 }

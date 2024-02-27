@@ -36,11 +36,24 @@ class PageController extends Controller
         // $profile = Profile::get()->load('user');
         // dd($profile->toArray());
 
-        // $user = User::find(1);
+        // $user = User::find(2);
         // $user->delete();
 
         // $user = User::has('profile')->get(); //profile User
         // $user = User::doesntHave('profile')->get();
-       
+
+        // $users = User::with('profile')->get();
+        // dd($users->toArray());
+        // return view('welcome', compact('users'));
+
+        // $user = User::find(10);
+        // $user->profile()->create(["address" => "No.1,test", "avatar" => "www.test.com", "is_active" => true]);
+        // $profile = new Profile();
+        // $profile->address = "123123";
+        // $profile->avatar = 'test.com';
+        // $profile->is_active = true;
+        // $user->profile()->save($profile);
+        // dd($user->profile->toArray());
+        // $user->profile()->update(['address' => 'new test']);
     }
 }

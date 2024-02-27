@@ -45,6 +45,7 @@ class User extends Authenticatable
     ];
     public function profile()
     {
-        return $this->hasOne(Profile::class);
+        // return $this->hasOne(Profile::class)->withDefault();
+        return $this->hasOne(Profile::class)->withDefault(["address"=>"12345","avatar"=>"www.example.com"]);
     }
 }
