@@ -18,10 +18,7 @@ class CommentFactory extends Factory
     {
         $subject = ['PHP', 'Nodejs', 'Laravel'];
         return [
-            'post_id' => $this->faker->numberBetween($min=1, $max=5),
-            'subject' => $subject[random_int($min=0,$max=2)],
-            'content' => $this->faker->text,
-            'is_active' => $this->faker->boolean()
+            'content' => $this->faker->text
         ];
     }
 }
