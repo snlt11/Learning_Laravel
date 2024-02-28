@@ -45,7 +45,11 @@ class User extends Authenticatable
     ];
     public function profile()
     {
-        // return $this->hasOne(Profile::class)->withDefault();
-        return $this->hasOne(Profile::class)->withDefault(["address"=>"12345","avatar"=>"www.example.com"]);
+        return $this->hasOne(Profile::class)->withDefault();
+        // return $this->hasOne(Profile::class)->withDefault(["address"=>"12345","avatar"=>"www.example.com"]);
+    }
+    public function roles()
+    {
+        return $this->belongsToMany(Role::class, 'role_users');
     }
 }
