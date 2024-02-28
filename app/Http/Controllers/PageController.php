@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Book;
 use App\Models\Comment;
 use App\Models\Post;
 use App\Models\Profile;
@@ -13,14 +14,8 @@ class PageController extends Controller
 {
     public function index()
     {
-        // $user = User::with('roles')->find(1);
-        // $role = Role::with('users')->get();
-        $user = User::find(1);
-        // $user->roles()->attach([1, 2]);
-        // $user->roles()->detach([1, 2]);
-        // $user->roles()->sync(3); //Replace with new roles
-        // $user->roles()->syncWithoutDetaching(2);
-        $user->roles()->syncWithoutDetaching([1 => ["created_at"=>now()]]);
-        dd($user->roles->toArray());
+        // $user = User::with('book')->find(1);
+        $book = User::with('bookDetail')->find(1);
+        dd($book->toArray());
     }
 }

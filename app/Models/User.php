@@ -52,4 +52,12 @@ class User extends Authenticatable
     {
         return $this->belongsToMany(Role::class, 'role_users');
     }
+    public function bookDetail()
+    {
+        return $this->hasOneThrough(BookDetail::class, Book::class);
+    }
+    public function book()
+    {
+        return $this->hasOne(Book::class);
+    }
 }
