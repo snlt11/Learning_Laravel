@@ -18,6 +18,7 @@ class PostFactory extends Factory
     {
         return [
             'title' => $this->faker->lastName,
+            'user_id' => random_int($min = 1, $max = 10),
             'content' => $this->faker->text,
             'likes' => $this->faker->numberBetween($min = 10, $max = 100),
         ];
